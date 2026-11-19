@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Investigação de causa raiz, reavaliação de pendências e verificação da eficácia da correção.">
+  <meta name="theme-color" content="#0c1629">
+  <title>Análise de problemas recorrentes | Fabrício Futagawa</title>
+  <link rel="stylesheet" href="../assets/site.css">
+  <script src="../assets/site.js" defer></script>
+</head>
+<body class="case">
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+  <header class="top">
+    <div class="wrap top-row">
+      <a class="brand" href="../" aria-label="Fabrício Futagawa, início"><span class="mark">FF</span><span>Fabrício Futagawa<small>Portfólio BPMN</small></span></a>
+      <nav aria-label="Navegação principal">
+        <a href="../#projetos" aria-current="true">Projetos</a>
+        <a href="../#sobre">Sobre mim</a>
+      </nav>
+    </div>
+  </header>
+  <main id="conteudo" class="blue">
+      <section class="case-hero">
+        <div class="wrap">
+          <nav class="breadcrumbs" aria-label="Localização"><a href="../#projetos">Projetos</a><span aria-hidden="true">/</span><span aria-current="page">Problemas</span></nav>
+          <div class="case-title-grid">
+            <div>
+              <p class="eyebrow"><span class="rule"></span> Melhoria contínua</p>
+              <h1>Análise de problemas recorrentes</h1>
+              <p>Investigação de causa raiz, reavaliação de pendências e verificação da eficácia da correção.</p>
+            </div>
+            <a class="button button-primary" href="../assets/modelos/03-gestao-problemas.bpmn" download><svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-4-4 4 4 4-4M4 16v4h16v-4"/></svg> Baixar modelo BPMN</a>
+          </div>
+        </div>
+      </section>
+      <div class="case-menu">
+        <nav class="wrap" aria-label="Seções do estudo">
+          <a href="#contexto">Contexto</a><a href="#processo">AS-IS e TO-BE</a><a href="#indicadores">Indicadores</a><a href="#cenarios">Cenários</a>
+        </nav>
+      </div>
+      <div class="wrap case-content">
+        <section class="case-section overview" id="contexto">
+          <div>
+            <p class="eyebrow">Causa raiz · Recorrência · Eficácia</p>
+            <h2>Contexto e problema</h2>
+            <p>Incidentes parecidos podem retornar mesmo após a restauração do serviço. Agrupar tickets e evidências permite avaliar se existe uma causa comum e priorizar uma correção.</p>
+            <p>Tratar cada incidente separadamente dificulta validar a causa raiz, acompanhar correções adiadas e descobrir se a ação evitou novas ocorrências.</p>
+            <p class="goal"><strong>Objetivo.</strong> Confirmar a causa com evidências, priorizar a correção e acompanhar a recorrência antes de encerrar o problema.</p>
+          </div>
+          <aside class="scope">
+            <h3>Escopo do processo</h3>
+            <dl><dt>Dono proposto</dt><dd>Gestor de problemas</dd><dt>Entrada</dt><dd>Incidentes relacionados, impacto, histórico de versões e evidências técnicas.</dd><dt>Saída</dt><dd>Causa documentada e correção verificada, com pendências acompanhadas até a reavaliação.</dd></dl>
+          </aside>
+        </section>
+        <section class="case-section" id="processo">
+          <div class="section-title case-heading"><h2>Desenho do processo</h2><p>Compare o cenário de partida com o fluxo proposto.</p></div>
+          <div class="process-box" data-process>
+            <div class="view-switch" aria-label="Visão do processo">
+              <button type="button" data-view="asis" aria-controls="asis" aria-pressed="false">AS-IS <small>Cenário de partida</small></button>
+              <button type="button" data-view="tobe" aria-controls="tobe" aria-pressed="true">TO-BE <small>Fluxo proposto</small></button>
+            </div>
+            <div class="process-panel" id="asis">
+              <h3>AS-IS hipotético</h3>
+              <p>Cenário didático descrito em texto, sem levantamento de campo.</p>
+              <ul class="control-grid"><li><strong>Tickets tratados em isolamento</strong><p>O time restaura o serviço a cada ocorrência, com pouco histórico agrupado para investigar padrões.</p></li><li><strong>Pendências sem retorno definido</strong><p>Correções adiadas ficam abertas sem data clara de reavaliação.</p></li><li><strong>Eficácia pouco visível</strong><p>Após uma alteração, o problema pode ser considerado resolvido sem observar se a falha voltou.</p></li></ul>
+            </div>
+            <div class="process-panel" id="tobe">
+              <h3 class="sr-only">TO-BE · Fluxo proposto</h3>
+              <div class="viewer" data-viewer>
+    <div class="viewer-toolbar">
+      <div class="viewer-label"><strong>Diagrama do processo</strong><span>BPMN 2.0 · TO-BE</span></div>
+      <div class="viewer-actions" aria-label="Controles do diagrama">
+        <button type="button" data-action="out" aria-label="Reduzir zoom"><svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg></button>
+        <output aria-live="polite" data-scale></output>
+        <button type="button" data-action="in" aria-label="Aumentar zoom"><svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5v14"/></svg></button>
+        <button type="button" data-action="fit" class="text-action">Ajustar</button>
+        <button type="button" data-action="full" aria-label="Ampliar visualização"><svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4"/></svg></button>
+      </div>
+    </div>
+    <div class="diagram-scroll" tabindex="0" role="region" aria-label="Diagrama rolável de Problemas">
+      <img src="../assets/diagramas/03-gestao-problemas.svg" alt="Diagrama TO-BE de Análise de problemas recorrentes, com as raias de Gestão de problemas, Sustentação / Especialistas, Responsável pelo serviço. As decisões e exceções estão descritas nos cenários abaixo." draggable="false">
+    </div>
+    <div class="viewer-foot"><span>Use o zoom e role ou arraste para explorar.</span><a href="../assets/diagramas/03-gestao-problemas.svg" target="_blank" rel="noopener">Abrir SVG</a></div>
+  </div>
+  <dialog class="diagram-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-bar"><h2 id="dialog-title">Análise de problemas recorrentes</h2><button type="button" data-action="close" aria-label="Fechar visualização"><svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+    <div data-dialog-content></div>
+  </dialog>
+              <h3 class="controls-title">Controles e evidências</h3>
+              <ul class="control-grid"><li><strong>Confirmar a causa</strong><p>Vincular ocorrências, testar hipóteses e registrar evidências e soluções de contorno disponíveis.</p><span><b>Evidência.</b> Registro do problema com incidentes e causa verificada.</span></li><li><strong>Acompanhar a pendência</strong><p>Se o serviço adiar a correção, registrar o risco e combinar uma data de reavaliação. O temporizador representa esse retorno.</p><span><b>Evidência.</b> Responsável, justificativa e data de reavaliação.</span></li><li><strong>Medir antes de encerrar</strong><p>Acionar a GMUD quando priorizado e observar a recorrência. Correção ineficaz retorna à análise.</p><span><b>Evidência.</b> Resultado da mudança e evidência da janela de observação.</span></li></ul>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" id="indicadores">
+          <div class="section-title case-heading"><h2>Resultados esperados</h2><p>Hipóteses para testar em um piloto, com linha de base e metas acordadas com o negócio.</p></div>
+          <ul class="outcomes"><li>Melhor visibilidade das causas de falhas recorrentes.</li><li>Menos pendências vencidas sem revisão.</li><li>Redução esperada da recorrência após correções eficazes.</li></ul>
+          <div class="table-frame">
+            <table><caption>Indicadores propostos</caption><thead><tr><th scope="col">Indicador</th><th scope="col">Como calcular</th><th scope="col">Apuração</th></tr></thead>
+              <tbody><tr><th scope="row">Recorrência por 1.000 transações</th><td>Incidentes vinculados à causa ÷ transações do serviço × 1.000.</td><td>Comparar 30 dias antes e depois, observando volume e contexto.</td></tr><tr><th scope="row">Eficácia das correções</th><td>Problemas corrigidos sem recorrência em 30 dias ÷ problemas corrigidos com 30 dias completos de observação × 100.</td><td>Mensal, considerando somente janelas completas.</td></tr><tr><th scope="row">Pendências vencidas</th><td>Problemas abertos com reavaliação vencida ÷ problemas abertos com data de reavaliação × 100.</td><td>Semanal, usando as datas acordadas com os responsáveis.</td></tr></tbody>
+            </table>
+          </div>
+          <p class="source-note"><strong>Fontes sugeridas.</strong> Tickets vinculados, registros de investigação e mudança, e volume de transações do ERP.</p>
+        </section>
+        <section class="case-section" id="cenarios">
+          <div class="section-title case-heading"><h2>Cenários de validação</h2><p>Abra um cenário para acompanhar o caminho esperado no processo.</p></div>
+          <div class="scenarios"><details><summary>Causa ainda não confirmada<svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5v14"/></svg></summary><p>Os especialistas coletam novos dados e testam hipóteses. O caso retorna à análise de causa raiz.</p></details><details><summary>Correção adiada<svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5v14"/></svg></summary><p>A gestão de problemas registra o risco e a data. Na data combinada, o responsável pelo serviço reavalia a prioridade.</p></details><details><summary>Correção ineficaz<svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5v14"/></svg></summary><p>Falha na mudança ou recorrência após a implantação reabre a investigação técnica.</p></details><details><summary>Correção eficaz<svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5v14"/></svg></summary><p>Concluída a observação com eficácia, a gestão de problemas atualiza a base de conhecimento e encerra o registro.</p></details></div>
+          <p class="source-note">Estudo demonstrativo elaborado com apoio de IA. Modelo BPMN 2.0 para revisão no Bizagi Modeler. Importação no aplicativo e medição em operação ainda pendentes.</p>
+        </section>
+        <nav class="case-next" aria-label="Navegação entre projetos"><a href="../#projetos">Todos os projetos</a><a href="../gestao-de-incidentes/"><small>Próximo estudo</small><strong>Gestão de incidentes de ERP</strong></a></nav>
+      </div>
+    </main>
+  <footer>
+    <div class="wrap footer-row">
+      <div><strong>Fabrício Futagawa</strong><span>Governança de TI · Processos · ITSM</span></div>
+      <a href="../#projetos">Estudos de caso</a>
+    </div>
+  </footer>
+</body>
+</html>

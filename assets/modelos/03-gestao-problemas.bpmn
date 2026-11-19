@@ -1,0 +1,321 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_03" targetNamespace="https://example.org/portfolio-bpmn" exporter="Portfolio demonstrativo" exporterVersion="1.0">
+  <bpmn:process id="Process_1" name="Análise de problemas recorrentes" isExecutable="false">
+    <bpmn:documentation>Estudo demonstrativo TO-BE. Não representa processo implantado. Investigar causas, controlar pendências e verificar redução sustentada da recorrência.</bpmn:documentation>
+    <bpmn:laneSet id="LaneSet_1">
+      <bpmn:lane id="Lane_0" name="Gestão de problemas">
+        <bpmn:flowNodeRef>inicio</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>registrar</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>pendente</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>espera</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>encerrar</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>fim</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_1" name="Sustentação / Especialistas">
+        <bpmn:flowNodeRef>analisar</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>g1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>coletar</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>planejar</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>corrigir</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_2" name="Responsável pelo serviço">
+        <bpmn:flowNodeRef>priorizar</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>g2</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>medir</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>g3</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="inicio" name="Recorrência identificada">
+      <bpmn:outgoing>Flow_0</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="registrar" name="Registrar problema e vincular incidentes">
+      <bpmn:incoming>Flow_0</bpmn:incoming>
+      <bpmn:outgoing>Flow_1</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="analisar" name="Analisar evidências e causa raiz">
+      <bpmn:incoming>Flow_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_2</bpmn:outgoing>
+      <bpmn:incoming>Flow_4</bpmn:incoming>
+      <bpmn:incoming>Flow_14</bpmn:incoming>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="g1" name="Causa confirmada?" gatewayDirection="Diverging">
+      <bpmn:incoming>Flow_2</bpmn:incoming>
+      <bpmn:outgoing>Flow_3</bpmn:outgoing>
+      <bpmn:outgoing>Flow_5</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="coletar" name="Coletar dados e testar hipóteses">
+      <bpmn:incoming>Flow_3</bpmn:incoming>
+      <bpmn:outgoing>Flow_4</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="planejar" name="Documentar causa e propor correção">
+      <bpmn:incoming>Flow_5</bpmn:incoming>
+      <bpmn:outgoing>Flow_6</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="priorizar" name="Avaliar risco e priorizar correção">
+      <bpmn:incoming>Flow_6</bpmn:incoming>
+      <bpmn:outgoing>Flow_7</bpmn:outgoing>
+      <bpmn:incoming>Flow_10</bpmn:incoming>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="g2" name="Correção autorizada?" gatewayDirection="Diverging">
+      <bpmn:incoming>Flow_7</bpmn:incoming>
+      <bpmn:outgoing>Flow_8</bpmn:outgoing>
+      <bpmn:outgoing>Flow_11</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="pendente" name="Registrar risco e data de reavaliação">
+      <bpmn:incoming>Flow_8</bpmn:incoming>
+      <bpmn:outgoing>Flow_9</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:intermediateCatchEvent id="espera" name="Data de reavaliação">
+      <bpmn:incoming>Flow_9</bpmn:incoming>
+      <bpmn:outgoing>Flow_10</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="Timer_reavaliacao">
+        <bpmn:timeDate xsi:type="bpmn:tFormalExpression">dataReavaliacao</bpmn:timeDate>
+      </bpmn:timerEventDefinition>
+    </bpmn:intermediateCatchEvent>
+    <bpmn:task id="corrigir" name="Solicitar mudança e acompanhar correção">
+      <bpmn:incoming>Flow_11</bpmn:incoming>
+      <bpmn:outgoing>Flow_12</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="medir" name="Monitorar eficácia da correção">
+      <bpmn:incoming>Flow_12</bpmn:incoming>
+      <bpmn:outgoing>Flow_13</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="g3" name="Correção eficaz?" gatewayDirection="Diverging">
+      <bpmn:incoming>Flow_13</bpmn:incoming>
+      <bpmn:outgoing>Flow_14</bpmn:outgoing>
+      <bpmn:outgoing>Flow_15</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="encerrar" name="Atualizar conhecimento e encerrar">
+      <bpmn:incoming>Flow_15</bpmn:incoming>
+      <bpmn:outgoing>Flow_16</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="fim" name="Problema encerrado">
+      <bpmn:incoming>Flow_16</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0" sourceRef="inicio" targetRef="registrar" />
+    <bpmn:sequenceFlow id="Flow_1" sourceRef="registrar" targetRef="analisar" />
+    <bpmn:sequenceFlow id="Flow_2" sourceRef="analisar" targetRef="g1" />
+    <bpmn:sequenceFlow id="Flow_3" sourceRef="g1" targetRef="coletar" name="Não">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">Não</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_4" sourceRef="coletar" targetRef="analisar" />
+    <bpmn:sequenceFlow id="Flow_5" sourceRef="g1" targetRef="planejar" name="Sim">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">Sim</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_6" sourceRef="planejar" targetRef="priorizar" />
+    <bpmn:sequenceFlow id="Flow_7" sourceRef="priorizar" targetRef="g2" />
+    <bpmn:sequenceFlow id="Flow_8" sourceRef="g2" targetRef="pendente" name="Não">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">Não</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_9" sourceRef="pendente" targetRef="espera" />
+    <bpmn:sequenceFlow id="Flow_10" sourceRef="espera" targetRef="priorizar" />
+    <bpmn:sequenceFlow id="Flow_11" sourceRef="g2" targetRef="corrigir" name="Sim">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">Sim</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_12" sourceRef="corrigir" targetRef="medir" />
+    <bpmn:sequenceFlow id="Flow_13" sourceRef="medir" targetRef="g3" />
+    <bpmn:sequenceFlow id="Flow_14" sourceRef="g3" targetRef="analisar" name="Não">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">Não</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_15" sourceRef="g3" targetRef="encerrar" name="Sim">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">Sim</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_16" sourceRef="encerrar" targetRef="fim" />
+  </bpmn:process>
+  <bpmn:collaboration id="Collaboration_1">
+    <bpmn:participant id="Pool_1" name="Análise de problemas recorrentes" processRef="Process_1" />
+  </bpmn:collaboration>
+  <bpmndi:BPMNDiagram id="Diagram_1">
+    <bpmndi:BPMNPlane id="Plane_1" bpmnElement="Collaboration_1">
+      <bpmndi:BPMNShape id="Pool_1_di" bpmnElement="Pool_1" isHorizontal="true">
+        <dc:Bounds x="30" y="100" width="2980" height="840" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0_di" bpmnElement="Lane_0" isHorizontal="true">
+        <dc:Bounds x="60" y="100" width="2950" height="280" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1_di" bpmnElement="Lane_1" isHorizontal="true">
+        <dc:Bounds x="60" y="380" width="2950" height="280" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_2_di" bpmnElement="Lane_2" isHorizontal="true">
+        <dc:Bounds x="60" y="660" width="2950" height="280" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0_di" bpmnElement="Flow_0">
+        <di:waypoint x="285.0" y="198.0" />
+        <di:waypoint x="405.0" y="198.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1_di" bpmnElement="Flow_1">
+        <di:waypoint x="559.0" y="198.0" />
+        <di:waypoint x="587.0" y="198.0" />
+        <di:waypoint x="587.0" y="478.0" />
+        <di:waypoint x="620.0" y="478.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_2_di" bpmnElement="Flow_2">
+        <di:waypoint x="774.0" y="478.0" />
+        <di:waypoint x="888.0" y="478.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_3_di" bpmnElement="Flow_3">
+        <di:waypoint x="936.0" y="478.0" />
+        <di:waypoint x="1050.0" y="478.0" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="983.0" y="451.0" width="38" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_4_di" bpmnElement="Flow_4">
+        <di:waypoint x="1204.0" y="478.0" />
+        <di:waypoint x="1226.0" y="478.0" />
+        <di:waypoint x="1226.0" y="617" />
+        <di:waypoint x="598.0" y="617" />
+        <di:waypoint x="598.0" y="478.0" />
+        <di:waypoint x="620.0" y="478.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_5_di" bpmnElement="Flow_5">
+        <di:waypoint x="936.0" y="478.0" />
+        <di:waypoint x="958.0" y="478.0" />
+        <di:waypoint x="958.0" y="634" />
+        <di:waypoint x="1243.0" y="634" />
+        <di:waypoint x="1243.0" y="478.0" />
+        <di:waypoint x="1265.0" y="478.0" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="964.0" y="614" width="38" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_6_di" bpmnElement="Flow_6">
+        <di:waypoint x="1419.0" y="478.0" />
+        <di:waypoint x="1447.0" y="478.0" />
+        <di:waypoint x="1447.0" y="758.0" />
+        <di:waypoint x="1480.0" y="758.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_7_di" bpmnElement="Flow_7">
+        <di:waypoint x="1634.0" y="758.0" />
+        <di:waypoint x="1748.0" y="758.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_8_di" bpmnElement="Flow_8">
+        <di:waypoint x="1796.0" y="758.0" />
+        <di:waypoint x="1824.0" y="758.0" />
+        <di:waypoint x="1824.0" y="198.0" />
+        <di:waypoint x="1910.0" y="198.0" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1830.0" y="464.0" width="38" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_9_di" bpmnElement="Flow_9">
+        <di:waypoint x="2064.0" y="198.0" />
+        <di:waypoint x="2184.0" y="198.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_10_di" bpmnElement="Flow_10">
+        <di:waypoint x="2220.0" y="198.0" />
+        <di:waypoint x="2242.0" y="198.0" />
+        <di:waypoint x="2242.0" y="337" />
+        <di:waypoint x="1458.0" y="337" />
+        <di:waypoint x="1458.0" y="758.0" />
+        <di:waypoint x="1480.0" y="758.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_11_di" bpmnElement="Flow_11">
+        <di:waypoint x="1796.0" y="758.0" />
+        <di:waypoint x="1824.0" y="758.0" />
+        <di:waypoint x="1824.0" y="478.0" />
+        <di:waypoint x="1910.0" y="478.0" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1830.0" y="604.0" width="38" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_12_di" bpmnElement="Flow_12">
+        <di:waypoint x="2064.0" y="478.0" />
+        <di:waypoint x="2092.0" y="478.0" />
+        <di:waypoint x="2092.0" y="758.0" />
+        <di:waypoint x="2125.0" y="758.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_13_di" bpmnElement="Flow_13">
+        <di:waypoint x="2279.0" y="758.0" />
+        <di:waypoint x="2393.0" y="758.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_14_di" bpmnElement="Flow_14">
+        <di:waypoint x="2441.0" y="758.0" />
+        <di:waypoint x="2463.0" y="758.0" />
+        <di:waypoint x="2463.0" y="914" />
+        <di:waypoint x="598.0" y="914" />
+        <di:waypoint x="598.0" y="478.0" />
+        <di:waypoint x="620.0" y="478.0" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2469.0" y="894" width="38" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_15_di" bpmnElement="Flow_15">
+        <di:waypoint x="2441.0" y="758.0" />
+        <di:waypoint x="2469.0" y="758.0" />
+        <di:waypoint x="2469.0" y="198.0" />
+        <di:waypoint x="2555.0" y="198.0" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2475.0" y="464.0" width="38" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_16_di" bpmnElement="Flow_16">
+        <di:waypoint x="2709.0" y="198.0" />
+        <di:waypoint x="2829.0" y="198.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="inicio_di" bpmnElement="inicio">
+        <dc:Bounds x="249.0" y="180.0" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="180.0" y="223.0" width="174" height="23" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="registrar_di" bpmnElement="registrar">
+        <dc:Bounds x="405.0" y="160.0" width="154" height="76" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="analisar_di" bpmnElement="analisar">
+        <dc:Bounds x="620.0" y="440.0" width="154" height="76" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="g1_di" bpmnElement="g1">
+        <dc:Bounds x="888.0" y="454.0" width="48" height="48" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="825.0" y="509.0" width="174" height="23" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="coletar_di" bpmnElement="coletar">
+        <dc:Bounds x="1050.0" y="440.0" width="154" height="76" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="planejar_di" bpmnElement="planejar">
+        <dc:Bounds x="1265.0" y="440.0" width="154" height="76" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="priorizar_di" bpmnElement="priorizar">
+        <dc:Bounds x="1480.0" y="720.0" width="154" height="76" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="g2_di" bpmnElement="g2">
+        <dc:Bounds x="1748.0" y="734.0" width="48" height="48" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1685.0" y="789.0" width="174" height="23" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="pendente_di" bpmnElement="pendente">
+        <dc:Bounds x="1910.0" y="160.0" width="154" height="76" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="espera_di" bpmnElement="espera">
+        <dc:Bounds x="2184.0" y="180.0" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2115.0" y="223.0" width="174" height="23" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="corrigir_di" bpmnElement="corrigir">
+        <dc:Bounds x="1910.0" y="440.0" width="154" height="76" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="medir_di" bpmnElement="medir">
+        <dc:Bounds x="2125.0" y="720.0" width="154" height="76" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="g3_di" bpmnElement="g3">
+        <dc:Bounds x="2393.0" y="734.0" width="48" height="48" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2330.0" y="789.0" width="174" height="23" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="encerrar_di" bpmnElement="encerrar">
+        <dc:Bounds x="2555.0" y="160.0" width="154" height="76" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="fim_di" bpmnElement="fim">
+        <dc:Bounds x="2829.0" y="180.0" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2760.0" y="223.0" width="174" height="23" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Triagem, escalonamento e validação com o negócio para restaurar o serviço com rastreabilidade.">
+  <meta name="theme-color" content="#0c1629">
+  <title>Gestão de incidentes de ERP | Fabrício Futagawa</title>
+  <link rel="stylesheet" href="../assets/site.css">
+  <script src="../assets/site.js" defer></script>
+</head>
+<body class="case">
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+  <header class="top">
+    <div class="wrap top-row">
+      <a class="brand" href="../" aria-label="Fabrício Futagawa, início"><span class="mark">FF</span><span>Fabrício Futagawa<small>Portfólio BPMN</small></span></a>
+      <nav aria-label="Navegação principal">
+        <a href="../#projetos" aria-current="true">Projetos</a>
+        <a href="../#sobre">Sobre mim</a>
+      </nav>
+    </div>
+  </header>
+  <main id="conteudo" class="mint">
+      <section class="case-hero">
+        <div class="wrap">
+          <nav class="breadcrumbs" aria-label="Localização"><a href="../#projetos">Projetos</a><span aria-hidden="true">/</span><span aria-current="page">Incidentes</span></nav>
+          <div class="case-title-grid">
+            <div>
+              <p class="eyebrow"><span class="rule"></span> Operação de serviços</p>
+              <h1>Gestão de incidentes de ERP</h1>
+              <p>Triagem, escalonamento e validação com o negócio para restaurar o serviço com rastreabilidade.</p>
+            </div>
+            <a class="button button-primary" href="../assets/modelos/01-gestao-incidentes.bpmn" download><svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-4-4 4 4 4-4M4 16v4h16v-4"/></svg> Baixar modelo BPMN</a>
+          </div>
+        </div>
+      </section>
+      <div class="case-menu">
+        <nav class="wrap" aria-label="Seções do estudo">
+          <a href="#contexto">Contexto</a><a href="#processo">AS-IS e TO-BE</a><a href="#indicadores">Indicadores</a><a href="#cenarios">Cenários</a>
+        </nav>
+      </div>
+      <div class="wrap case-content">
+        <section class="case-section overview" id="contexto">
+          <div>
+            <p class="eyebrow">Triagem · SLA · Escalonamento</p>
+            <h2>Contexto e problema</h2>
+            <p>Um chamado de ERP pode afetar desde uma rotina individual até uma operação do varejo. O Service Desk precisa entender o impacto, reunir evidências e acionar a sustentação quando a triagem inicial não resolve a falha.</p>
+            <p>Quando o ticket chega com poucos dados, a prioridade depende de avaliação informal e o chamado pode ser encerrado antes que o negócio confirme a restauração.</p>
+            <p class="goal"><strong>Objetivo.</strong> Restaurar o serviço e registrar as decisões, a solução aplicada e o aceite do negócio.</p>
+          </div>
+          <aside class="scope">
+            <h3>Escopo do processo</h3>
+            <dl><dt>Dono proposto</dt><dd>Gestor de serviços de TI</dd><dt>Entrada</dt><dd>Relato da falha, serviço afetado, impacto, horário e evidências.</dd><dt>Saída</dt><dd>Serviço validado e ticket com diagnóstico, solução e histórico.</dd></dl>
+          </aside>
+        </section>
+        <section class="case-section" id="processo">
+          <div class="section-title case-heading"><h2>Desenho do processo</h2><p>Compare o cenário de partida com o fluxo proposto.</p></div>
+          <div class="process-box" data-process>
+            <div class="view-switch" aria-label="Visão do processo">
+              <button type="button" data-view="asis" aria-controls="asis" aria-pressed="false">AS-IS <small>Cenário de partida</small></button>
+              <button type="button" data-view="tobe" aria-controls="tobe" aria-pressed="true">TO-BE <small>Fluxo proposto</small></button>
+            </div>
+            <div class="process-panel" id="asis">
+              <h3>AS-IS hipotético</h3>
+              <p>Cenário didático descrito em texto, sem levantamento de campo.</p>
+              <ul class="control-grid"><li><strong>Triagem incompleta</strong><p>O Service Desk recebe o relato com evidências insuficientes e precisa voltar ao solicitante.</p></li><li><strong>Prioridade informal</strong><p>A investigação começa sem critérios consistentes de impacto e urgência.</p></li><li><strong>Aceite indefinido</strong><p>O atendimento pode ser encerrado após o ajuste técnico, antes da confirmação do negócio.</p></li></ul>
+            </div>
+            <div class="process-panel" id="tobe">
+              <h3 class="sr-only">TO-BE · Fluxo proposto</h3>
+              <div class="viewer" data-viewer>
+    <div class="viewer-toolbar">
+      <div class="viewer-label"><strong>Diagrama do processo</strong><span>BPMN 2.0 · TO-BE</span></div>
+      <div class="viewer-actions" aria-label="Controles do diagrama">
+        <button type="button" data-action="out" aria-label="Reduzir zoom"><svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg></button>
+        <output aria-live="polite" data-scale></output>
+        <button type="button" data-action="in" aria-label="Aumentar zoom"><svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5v14"/></svg></button>
+        <button type="button" data-action="fit" class="text-action">Ajustar</button>
+        <button type="button" data-action="full" aria-label="Ampliar visualização"><svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4"/></svg></button>
+      </div>
+    </div>
+    <div class="diagram-scroll" tabindex="0" role="region" aria-label="Diagrama rolável de Incidentes">
+      <img src="../assets/diagramas/01-gestao-incidentes.svg" alt="Diagrama TO-BE de Gestão de incidentes de ERP, com as raias de Service Desk, Sustentação N2/N3, Responsável de negócio. As decisões e exceções estão descritas nos cenários abaixo." draggable="false">
+    </div>
+    <div class="viewer-foot"><span>Use o zoom e role ou arraste para explorar.</span><a href="../assets/diagramas/01-gestao-incidentes.svg" target="_blank" rel="noopener">Abrir SVG</a></div>
+  </div>
+  <dialog class="diagram-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-bar"><h2 id="dialog-title">Gestão de incidentes de ERP</h2><button type="button" data-action="close" aria-label="Fechar visualização"><svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+    <div data-dialog-content></div>
+  </dialog>
+              <h3 class="controls-title">Controles e evidências</h3>
+              <ul class="control-grid"><li><strong>Classificar na abertura</strong><p>Registrar evidências e combinar impacto e urgência para aplicar o SLA acordado.</p><span><b>Evidência.</b> Ticket com prioridade, evidência e responsável.</span></li><li><strong>Escalonar quando necessário</strong><p>A sustentação investiga e encaminha à GMUD quando a solução exigir autorização.</p><span><b>Evidência.</b> Vínculo entre incidente e mudança.</span></li><li><strong>Confirmar a restauração</strong><p>O negócio valida o serviço. Se a validação falhar, a sustentação retoma a investigação.</p><span><b>Evidência.</b> Registro de aceite e solução aplicada.</span></li></ul>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" id="indicadores">
+          <div class="section-title case-heading"><h2>Resultados esperados</h2><p>Hipóteses para testar em um piloto, com linha de base e metas acordadas com o negócio.</p></div>
+          <ul class="outcomes"><li>Menos idas e vindas na triagem.</li><li>Mais previsibilidade no atendimento por prioridade.</li><li>Menos encerramentos prematuros e reaberturas.</li></ul>
+          <div class="table-frame">
+            <table><caption>Indicadores propostos</caption><thead><tr><th scope="col">Indicador</th><th scope="col">Como calcular</th><th scope="col">Apuração</th></tr></thead>
+              <tbody><tr><th scope="row">Cumprimento do SLA</th><td>Incidentes resolvidos no prazo ÷ incidentes resolvidos com SLA aplicável × 100.</td><td>Mensal, por prioridade. Considerar as pausas previstas no SLA.</td></tr><tr><th scope="row">Tempo médio de restauração</th><td>Soma do tempo entre abertura e restauração ÷ incidentes restaurados.</td><td>Semanal, em horas corridas. Acompanhar também a mediana.</td></tr><tr><th scope="row">Reabertura em 7 dias</th><td>Incidentes reabertos em até 7 dias ÷ incidentes encerrados com 7 dias completos de observação × 100.</td><td>Mensal, considerando somente janelas completas.</td></tr></tbody>
+            </table>
+          </div>
+          <p class="source-note"><strong>Fontes sugeridas.</strong> Histórico de tickets, registros de mudanças e evidências de aceite.</p>
+        </section>
+        <section class="case-section" id="cenarios">
+          <div class="section-title case-heading"><h2>Cenários de validação</h2><p>Abra um cenário para acompanhar o caminho esperado no processo.</p></div>
+          <div class="scenarios"><details><summary>Solução conhecida e segura<svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5v14"/></svg></summary><p>O Service Desk registra, prioriza e faz a triagem. A sustentação aplica a solução, o negócio confirma a restauração e o Service Desk documenta e encerra.</p></details><details><summary>Solução exige mudança<svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5v14"/></svg></summary><p>A sustentação abre a GMUD e acompanha o resultado. Com a mudança bem-sucedida, o incidente segue direto para validação do negócio.</p></details><details><summary>Mudança rejeitada ou malsucedida<svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5v14"/></svg></summary><p>O incidente permanece aberto e volta para investigação técnica.</p></details><details><summary>Negócio ainda identifica a falha<svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5v14"/></svg></summary><p>A validação negativa devolve o atendimento à sustentação para nova investigação.</p></details></div>
+          <p class="source-note">Estudo demonstrativo elaborado com apoio de IA. Modelo BPMN 2.0 para revisão no Bizagi Modeler. Importação no aplicativo e medição em operação ainda pendentes.</p>
+        </section>
+        <nav class="case-next" aria-label="Navegação entre projetos"><a href="../#projetos">Todos os projetos</a><a href="../gestao-de-mudancas/"><small>Próximo estudo</small><strong>Gestão de mudanças de TI</strong></a></nav>
+      </div>
+    </main>
+  <footer>
+    <div class="wrap footer-row">
+      <div><strong>Fabrício Futagawa</strong><span>Governança de TI · Processos · ITSM</span></div>
+      <a href="../#projetos">Estudos de caso</a>
+    </div>
+  </footer>
+</body>
+</html>

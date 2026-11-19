@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Planejamento, autorização e reversão de mudanças normais em um fluxo de GMUD.">
+  <meta name="theme-color" content="#0c1629">
+  <title>Gestão de mudanças de TI | Fabrício Futagawa</title>
+  <link rel="stylesheet" href="../assets/site.css">
+  <script src="../assets/site.js" defer></script>
+</head>
+<body class="case">
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+  <header class="top">
+    <div class="wrap top-row">
+      <a class="brand" href="../" aria-label="Fabrício Futagawa, início"><span class="mark">FF</span><span>Fabrício Futagawa<small>Portfólio BPMN</small></span></a>
+      <nav aria-label="Navegação principal">
+        <a href="../#projetos" aria-current="true">Projetos</a>
+        <a href="../#sobre">Sobre mim</a>
+      </nav>
+    </div>
+  </header>
+  <main id="conteudo" class="violet">
+      <section class="case-hero">
+        <div class="wrap">
+          <nav class="breadcrumbs" aria-label="Localização"><a href="../#projetos">Projetos</a><span aria-hidden="true">/</span><span aria-current="page">Mudanças</span></nav>
+          <div class="case-title-grid">
+            <div>
+              <p class="eyebrow"><span class="rule"></span> Governança de TI</p>
+              <h1>Gestão de mudanças de TI</h1>
+              <p>Planejamento, autorização e reversão de mudanças normais em um fluxo de GMUD.</p>
+            </div>
+            <a class="button button-primary" href="../assets/modelos/02-gestao-mudancas.bpmn" download><svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-4-4 4 4 4-4M4 16v4h16v-4"/></svg> Baixar modelo BPMN</a>
+          </div>
+        </div>
+      </section>
+      <div class="case-menu">
+        <nav class="wrap" aria-label="Seções do estudo">
+          <a href="#contexto">Contexto</a><a href="#processo">AS-IS e TO-BE</a><a href="#indicadores">Indicadores</a><a href="#cenarios">Cenários</a>
+        </nav>
+      </div>
+      <div class="wrap case-content">
+        <section class="case-section overview" id="contexto">
+          <div>
+            <p class="eyebrow">GMUD · Risco · Aprovação</p>
+            <h2>Contexto e problema</h2>
+            <p>Uma mudança planejada no ERP depende de janela, testes e responsáveis definidos. Este estudo cobre mudanças normais, com papéis distintos para quem solicita, autoriza e executa.</p>
+            <p>Uma alteração pode chegar à implantação sem evidência de aprovação, critérios claros de sucesso ou um plano viável para recuperar o serviço.</p>
+            <p class="goal"><strong>Objetivo.</strong> Autorizar as mudanças com base no risco e registrar o resultado da implantação, incluindo falha ou reversão.</p>
+          </div>
+          <aside class="scope">
+            <h3>Escopo do processo</h3>
+            <dl><dt>Dono proposto</dt><dd>Gestor de mudanças</dd><dt>Entrada</dt><dd>Solicitação com escopo, dependências, risco, testes, janela e estratégia de reversão.</dd><dt>Saída</dt><dd>Decisão registrada e, se executada, resultado de sucesso, reversão ou falha.</dd></dl>
+          </aside>
+        </section>
+        <section class="case-section" id="processo">
+          <div class="section-title case-heading"><h2>Desenho do processo</h2><p>Compare o cenário de partida com o fluxo proposto.</p></div>
+          <div class="process-box" data-process>
+            <div class="view-switch" aria-label="Visão do processo">
+              <button type="button" data-view="asis" aria-controls="asis" aria-pressed="false">AS-IS <small>Cenário de partida</small></button>
+              <button type="button" data-view="tobe" aria-controls="tobe" aria-pressed="true">TO-BE <small>Fluxo proposto</small></button>
+            </div>
+            <div class="process-panel" id="asis">
+              <h3>AS-IS hipotético</h3>
+              <p>Cenário didático descrito em texto, sem levantamento de campo.</p>
+              <ul class="control-grid"><li><strong>Solicitação incompleta</strong><p>A demanda chega com escopo resumido, sem dependências ou critérios de aceite suficientes.</p></li><li><strong>Autorização dispersa</strong><p>A decisão fica em mensagens informais e é difícil recuperar quem autorizou e por quê.</p></li><li><strong>Reversão improvisada</strong><p>Ao falhar um teste, a equipe precisa definir como restaurar o serviço durante a janela.</p></li></ul>
+            </div>
+            <div class="process-panel" id="tobe">
+              <h3 class="sr-only">TO-BE · Fluxo proposto</h3>
+              <div class="viewer" data-viewer>
+    <div class="viewer-toolbar">
+      <div class="viewer-label"><strong>Diagrama do processo</strong><span>BPMN 2.0 · TO-BE</span></div>
+      <div class="viewer-actions" aria-label="Controles do diagrama">
+        <button type="button" data-action="out" aria-label="Reduzir zoom"><svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg></button>
+        <output aria-live="polite" data-scale></output>
+        <button type="button" data-action="in" aria-label="Aumentar zoom"><svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5v14"/></svg></button>
+        <button type="button" data-action="fit" class="text-action">Ajustar</button>
+        <button type="button" data-action="full" aria-label="Ampliar visualização"><svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4"/></svg></button>
+      </div>
+    </div>
+    <div class="diagram-scroll" tabindex="0" role="region" aria-label="Diagrama rolável de Mudanças">
+      <img src="../assets/diagramas/02-gestao-mudancas.svg" alt="Diagrama TO-BE de Gestão de mudanças de TI, com as raias de Solicitante / Sustentação, Autoridade de mudança, Equipe executora. As decisões e exceções estão descritas nos cenários abaixo." draggable="false">
+    </div>
+    <div class="viewer-foot"><span>Use o zoom e role ou arraste para explorar.</span><a href="../assets/diagramas/02-gestao-mudancas.svg" target="_blank" rel="noopener">Abrir SVG</a></div>
+  </div>
+  <dialog class="diagram-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-bar"><h2 id="dialog-title">Gestão de mudanças de TI</h2><button type="button" data-action="close" aria-label="Fechar visualização"><svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+    <div data-dialog-content></div>
+  </dialog>
+              <h3 class="controls-title">Controles e evidências</h3>
+              <ul class="control-grid"><li><strong>Avaliar impacto e prontidão</strong><p>Revisar risco, dependências, evidências de teste e viabilidade de reversão antes da decisão.</p><span><b>Evidência.</b> GMUD com critérios de sucesso e plano de recuperação.</span></li><li><strong>Separar autorização e execução</strong><p>A autoridade definida pelo risco registra a decisão. A equipe executa na janela autorizada.</p><span><b>Evidência.</b> Identidade, data e justificativa da decisão.</span></li><li><strong>Testar e classificar o resultado</strong><p>Reverter se os critérios falharem e acionar incidentes se o serviço continuar indisponível.</p><span><b>Evidência.</b> Resultado da implantação e incidente vinculado, se aplicável.</span></li></ul>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" id="indicadores">
+          <div class="section-title case-heading"><h2>Resultados esperados</h2><p>Hipóteses para testar em um piloto, com linha de base e metas acordadas com o negócio.</p></div>
+          <ul class="outcomes"><li>Decisões e aprovações rastreáveis.</li><li>Menos improviso quando uma implantação falha.</li><li>Histórico para comparar sucesso e reversão por classe de risco.</li></ul>
+          <div class="table-frame">
+            <table><caption>Indicadores propostos</caption><thead><tr><th scope="col">Indicador</th><th scope="col">Como calcular</th><th scope="col">Apuração</th></tr></thead>
+              <tbody><tr><th scope="row">Taxa de sucesso</th><td>Mudanças com critérios atendidos e sem incidente atribuível em 7 dias ÷ mudanças executadas com 7 dias completos de observação × 100.</td><td>Mensal, com base nas mudanças executadas.</td></tr><tr><th scope="row">Taxa de reversão</th><td>Mudanças com reversão executada ÷ mudanças executadas × 100.</td><td>Mensal, incluindo reversões malsucedidas.</td></tr><tr><th scope="row">Tempo de decisão</th><td>Soma do tempo da submissão completa até a decisão ÷ solicitações decididas.</td><td>Mensal, em horas úteis do calendário definido.</td></tr></tbody>
+            </table>
+          </div>
+          <p class="source-note"><strong>Fontes sugeridas.</strong> Histórico de GMUD, aprovações, evidências de testes e incidentes vinculados.</p>
+        </section>
+        <section class="case-section" id="cenarios">
+          <div class="section-title case-heading"><h2>Cenários de validação</h2><p>Abra um cenário para acompanhar o caminho esperado no processo.</p></div>
+          <div class="scenarios"><details><summary>Mudança rejeitada<svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5v14"/></svg></summary><p>A autoridade registra a decisão, comunica o solicitante e encerra o pedido antes da execução.</p></details><details><summary>Implantação bem-sucedida<svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5v14"/></svg></summary><p>A equipe executa na janela autorizada e testa os critérios. A autoridade revisa o resultado e registra as lições.</p></details><details><summary>Reversão recupera o serviço<svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5v14"/></svg></summary><p>Com o teste negativo, a equipe reverte a alteração. A revisão registra a implantação como revertida.</p></details><details><summary>Reversão insuficiente<svg class="" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5v14"/></svg></summary><p>A sustentação aciona o processo de incidentes, acompanha a restauração e encaminha a GMUD para revisão como falha.</p></details></div>
+          <p class="source-note">Estudo demonstrativo elaborado com apoio de IA. Modelo BPMN 2.0 para revisão no Bizagi Modeler. Importação no aplicativo e medição em operação ainda pendentes.</p>
+        </section>
+        <nav class="case-next" aria-label="Navegação entre projetos"><a href="../#projetos">Todos os projetos</a><a href="../gestao-de-problemas/"><small>Próximo estudo</small><strong>Análise de problemas recorrentes</strong></a></nav>
+      </div>
+    </main>
+  <footer>
+    <div class="wrap footer-row">
+      <div><strong>Fabrício Futagawa</strong><span>Governança de TI · Processos · ITSM</span></div>
+      <a href="../#projetos">Estudos de caso</a>
+    </div>
+  </footer>
+</body>
+</html>
